@@ -7,13 +7,10 @@
 //
 
 #import "IRPMasterViewController.h"
-
 #import "IRPDetailViewController.h"
+#import "IRPAddAppViewController.h"
+#import "FirebaseApp.h"
 
-@interface IRPMasterViewController () {
-    NSMutableArray *_objects;
-}
-@end
 
 @implementation IRPMasterViewController
 
@@ -25,27 +22,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *initialItems = [FirebaseApp findAll];
+    if(initialItems != nil)
+    {
+        self.appItems = [initialItems mutableCopy];
+    }
+    else {
+        self.appItems = [[NSMutableArray alloc] init];
+    }
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Table View
@@ -57,15 +50,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [self.appItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    FirebaseApp *appItem = [self.appItems objectAtIndex:indexPath.row];
+    cell.textLabel.text= appItem.appName;
     return cell;
 }
 
@@ -78,7 +71,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [self.appItems removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -105,8 +98,20 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        NSDate *object = self.appItems[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+- (IBAction)unwindToMasterView:(UIStoryboardSegue *)segue
+{
+    IRPAddAppViewController *source = [segue sourceViewController];
+    FirebaseApp *appItem = source.appItem;
+    
+    if (appItem != nil)
+    {
+        [self.appItems addObject:appItem];
+        [self.tableView reloadData];
     }
 }
 

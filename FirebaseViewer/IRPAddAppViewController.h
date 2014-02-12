@@ -1,5 +1,5 @@
 //
-//  IRPMasterViewController.h
+//  IRPAddAppViewController.h
 //  FirebaseViewer
 //
 //  Created by Adam Shamblin on 2/11/14.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FirebaseApp.h"
 
-@interface IRPMasterViewController : UITableViewController
+@interface IRPAddAppViewController : UIViewController
 
-@property (nonatomic) NSMutableArray *appItems;
+@property FirebaseApp *appItem;
 
 @end
