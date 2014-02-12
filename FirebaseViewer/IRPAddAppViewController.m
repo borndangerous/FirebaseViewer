@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UITextField *appNameField;
 @property (weak, nonatomic) IBOutlet UITextField *appURLField;
+@property (weak, nonatomic) IBOutlet UITextField *appSecretField;
 
 @end
 
@@ -50,6 +51,7 @@
         self.appItem = [FirebaseApp createEntity];
         self.appItem.appName = self.appNameField.text;
         self.appItem.appURL = self.appURLField.text;
+        self.appItem.appSecret = self.appSecretField.text;
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     }
 }

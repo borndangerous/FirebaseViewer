@@ -24,8 +24,8 @@
 		661B368318AADBC900C51A4C /* FirebaseViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B368218AADBC900C51A4C /* FirebaseViewerTests.m */; };
 		6626D98118AADD6E000FC73D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6626D98018AADD6E000FC73D /* CoreData.framework */; };
 		6626D98518AAEC63000FC73D /* FirebaseApps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98318AAEC63000FC73D /* FirebaseApps.xcdatamodeld */; };
-		6626D98818AAEE62000FC73D /* FirebaseApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98718AAEE62000FC73D /* FirebaseApp.m */; };
 		6626D98B18AB1FF4000FC73D /* IRPAddAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */; };
+		664DF80018AC0FB500342421 /* FirebaseApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 664DF7FF18AC0FB500342421 /* FirebaseApp.m */; };
 		6DEC4AA8BF4E45F3B9A10D86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E863E6FFF84715A2CCC42B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,10 +64,10 @@
 		661B368218AADBC900C51A4C /* FirebaseViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseViewerTests.m; sourceTree = "<group>"; };
 		6626D98018AADD6E000FC73D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6626D98418AAEC63000FC73D /* FirebaseApps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirebaseApps.xcdatamodel; sourceTree = "<group>"; };
-		6626D98618AAEE62000FC73D /* FirebaseApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
-		6626D98718AAEE62000FC73D /* FirebaseApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseApp.m; sourceTree = "<group>"; };
 		6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPAddAppViewController.h; sourceTree = "<group>"; };
 		6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPAddAppViewController.m; sourceTree = "<group>"; };
+		664DF7FE18AC0FB500342421 /* FirebaseApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
+		664DF7FF18AC0FB500342421 /* FirebaseApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseApp.m; sourceTree = "<group>"; };
 		67E863E6FFF84715A2CCC42B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,9 +140,9 @@
 				661B366918AADBC900C51A4C /* IRPMasterViewController.h */,
 				661B366A18AADBC900C51A4C /* IRPMasterViewController.m */,
 				661B366C18AADBC900C51A4C /* IRPDetailViewController.h */,
+				661B366D18AADBC900C51A4C /* IRPDetailViewController.m */,
 				6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */,
 				6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */,
-				661B366D18AADBC900C51A4C /* IRPDetailViewController.m */,
 				661B366F18AADBC900C51A4C /* Images.xcassets */,
 				661B365B18AADBC900C51A4C /* Supporting Files */,
 			);
@@ -181,9 +181,9 @@
 		6626D98218AAEA8C000FC73D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				664DF7FE18AC0FB500342421 /* FirebaseApp.h */,
+				664DF7FF18AC0FB500342421 /* FirebaseApp.m */,
 				6626D98318AAEC63000FC73D /* FirebaseApps.xcdatamodeld */,
-				6626D98618AAEE62000FC73D /* FirebaseApp.h */,
-				6626D98718AAEE62000FC73D /* FirebaseApp.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -321,11 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664DF80018AC0FB500342421 /* FirebaseApp.m in Sources */,
 				661B366518AADBC900C51A4C /* IRPAppDelegate.m in Sources */,
 				661B366E18AADBC900C51A4C /* IRPDetailViewController.m in Sources */,
 				661B366118AADBC900C51A4C /* main.m in Sources */,
 				661B366B18AADBC900C51A4C /* IRPMasterViewController.m in Sources */,
-				6626D98818AAEE62000FC73D /* FirebaseApp.m in Sources */,
 				6626D98518AAEC63000FC73D /* FirebaseApps.xcdatamodeld in Sources */,
 				6626D98B18AB1FF4000FC73D /* IRPAddAppViewController.m in Sources */,
 			);

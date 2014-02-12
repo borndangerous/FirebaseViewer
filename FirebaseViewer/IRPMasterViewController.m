@@ -71,8 +71,12 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.appItems removeObjectAtIndex:indexPath.row];
+        FirebaseApp *appItem = [self.appItems objectAtIndex:indexPath.row];
+        [self.appItems removeObject:appItem];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [appItem deleteEntity];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
@@ -98,7 +102,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.appItems[indexPath.row];
+        FirebaseApp *object = self.appItems[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

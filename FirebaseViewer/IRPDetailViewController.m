@@ -9,43 +9,57 @@
 #import "IRPDetailViewController.h"
 
 @interface IRPDetailViewController ()
-- (void)configureView;
+
+@property (weak, nonatomic) IBOutlet UITextView *detailJSONView;
+
 @end
 
 @implementation IRPDetailViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    
+    Firebase *dbRef = [self connect];
+    if(dbRef != nil)
+    {
+        [self observeConnection:dbRef];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (Firebase *) connect
+{
+    Firebase *dbRef = [[Firebase alloc] initWithUrl:self.detailItem.appURL];
+
+    [dbRef authWithCredential:self.detailItem.appSecret withCompletionBlock:
+     ^(NSError *error, id authData){
+         if(error != nil)
+         {
+             NSLog(@"Login failed: %@", error);
+         } else {
+             NSLog(@"Login succeeded!");
+         }
+     } withCancelBlock:^(NSError *error) {
+         NSLog(@"Authentication cancelled: %@", error);
+     }];
+    
+    return dbRef;
+}
+
+- (void) observeConnection: (Firebase *) dbRef
+{
+    [dbRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+        self.detailJSONView.text = [NSString stringWithFormat:@"%@", snapshot.value];
+    }];
 }
 
 @end

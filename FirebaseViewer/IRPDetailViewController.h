@@ -6,11 +6,13 @@
 //  Copyright (c) 2014 Adam Shamblin. All rights reserved.
 //
 
+#import <Firebase/Firebase.h>
 #import <UIKit/UIKit.h>
+#import "FirebaseApp.h"
 
 @interface IRPDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-
+@property (strong, nonatomic) FirebaseApp *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
 @end

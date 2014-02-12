@@ -2,7 +2,7 @@
 //  FirebaseApp.h
 //  FirebaseViewer
 //
-//  Created by Adam Shamblin on 2/11/14.
+//  Created by Adam Shamblin on 2/12/14.
 //  Copyright (c) 2014 Adam Shamblin. All rights reserved.
 //
 
@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * appName;
 @property (nonatomic, retain) NSString * appURL;
+@property (nonatomic, retain) NSString * appSecret;
 
 @end
