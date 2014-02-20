@@ -6,6 +6,6 @@
         <attribute name="appURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FirebaseApp" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FirebaseApp" positionX="0" positionY="0" width="128" height="88"/>
     </elements>
 </model>

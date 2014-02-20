@@ -15,7 +15,6 @@
 		661B366518AADBC900C51A4C /* IRPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B366418AADBC900C51A4C /* IRPAppDelegate.m */; };
 		661B366818AADBC900C51A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661B366618AADBC900C51A4C /* Main.storyboard */; };
 		661B366B18AADBC900C51A4C /* IRPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B366A18AADBC900C51A4C /* IRPMasterViewController.m */; };
-		661B366E18AADBC900C51A4C /* IRPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B366D18AADBC900C51A4C /* IRPDetailViewController.m */; };
 		661B367018AADBC900C51A4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B366F18AADBC900C51A4C /* Images.xcassets */; };
 		661B367718AADBC900C51A4C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661B367618AADBC900C51A4C /* XCTest.framework */; };
 		661B367818AADBC900C51A4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661B365418AADBC800C51A4C /* Foundation.framework */; };
@@ -25,7 +24,11 @@
 		6626D98118AADD6E000FC73D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6626D98018AADD6E000FC73D /* CoreData.framework */; };
 		6626D98518AAEC63000FC73D /* FirebaseApps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98318AAEC63000FC73D /* FirebaseApps.xcdatamodeld */; };
 		6626D98B18AB1FF4000FC73D /* IRPAddAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */; };
+		6636800218B302C700B9D8FF /* FirebaseAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636800118B302C700B9D8FF /* FirebaseAppData.m */; };
+		6636800518B3175800B9D8FF /* IRPAppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636800418B3175800B9D8FF /* IRPAppInfoCell.m */; };
 		664DF80018AC0FB500342421 /* FirebaseApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 664DF7FF18AC0FB500342421 /* FirebaseApp.m */; };
+		6657E54F18B50AE800FB8197 /* IRPLeafNodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E54E18B50AE800FB8197 /* IRPLeafNodeCell.m */; };
+		665BEFA918B05F80009CD139 /* IRPDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665BEFA818B05F80009CD139 /* IRPDataTableViewController.m */; };
 		6DEC4AA8BF4E45F3B9A10D86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E863E6FFF84715A2CCC42B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +57,6 @@
 		661B366718AADBC900C51A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		661B366918AADBC900C51A4C /* IRPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRPMasterViewController.h; sourceTree = "<group>"; };
 		661B366A18AADBC900C51A4C /* IRPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRPMasterViewController.m; sourceTree = "<group>"; };
-		661B366C18AADBC900C51A4C /* IRPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRPDetailViewController.h; sourceTree = "<group>"; };
-		661B366D18AADBC900C51A4C /* IRPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRPDetailViewController.m; sourceTree = "<group>"; };
 		661B366F18AADBC900C51A4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		661B367518AADBC900C51A4C /* FirebaseViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		661B367618AADBC900C51A4C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -66,8 +67,16 @@
 		6626D98418AAEC63000FC73D /* FirebaseApps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirebaseApps.xcdatamodel; sourceTree = "<group>"; };
 		6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPAddAppViewController.h; sourceTree = "<group>"; };
 		6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPAddAppViewController.m; sourceTree = "<group>"; };
+		6636800018B302C700B9D8FF /* FirebaseAppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseAppData.h; sourceTree = "<group>"; };
+		6636800118B302C700B9D8FF /* FirebaseAppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseAppData.m; sourceTree = "<group>"; };
+		6636800318B3175800B9D8FF /* IRPAppInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPAppInfoCell.h; sourceTree = "<group>"; };
+		6636800418B3175800B9D8FF /* IRPAppInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPAppInfoCell.m; sourceTree = "<group>"; };
 		664DF7FE18AC0FB500342421 /* FirebaseApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
 		664DF7FF18AC0FB500342421 /* FirebaseApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseApp.m; sourceTree = "<group>"; };
+		6657E54D18B50AE800FB8197 /* IRPLeafNodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPLeafNodeCell.h; sourceTree = "<group>"; };
+		6657E54E18B50AE800FB8197 /* IRPLeafNodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPLeafNodeCell.m; sourceTree = "<group>"; };
+		665BEFA718B05F80009CD139 /* IRPDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPDataTableViewController.h; sourceTree = "<group>"; };
+		665BEFA818B05F80009CD139 /* IRPDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPDataTableViewController.m; sourceTree = "<group>"; };
 		67E863E6FFF84715A2CCC42B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,15 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				6626D98218AAEA8C000FC73D /* Models */,
+				66367FFF18B2A04F00B9D8FF /* Views */,
+				66367FFE18B2A02400B9D8FF /* View Controllers */,
 				661B366318AADBC900C51A4C /* IRPAppDelegate.h */,
 				661B366418AADBC900C51A4C /* IRPAppDelegate.m */,
 				661B366618AADBC900C51A4C /* Main.storyboard */,
-				661B366918AADBC900C51A4C /* IRPMasterViewController.h */,
-				661B366A18AADBC900C51A4C /* IRPMasterViewController.m */,
-				661B366C18AADBC900C51A4C /* IRPDetailViewController.h */,
-				661B366D18AADBC900C51A4C /* IRPDetailViewController.m */,
-				6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */,
-				6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */,
 				661B366F18AADBC900C51A4C /* Images.xcassets */,
 				661B365B18AADBC900C51A4C /* Supporting Files */,
 			);
@@ -183,9 +188,35 @@
 			children = (
 				664DF7FE18AC0FB500342421 /* FirebaseApp.h */,
 				664DF7FF18AC0FB500342421 /* FirebaseApp.m */,
+				6636800018B302C700B9D8FF /* FirebaseAppData.h */,
+				6636800118B302C700B9D8FF /* FirebaseAppData.m */,
 				6626D98318AAEC63000FC73D /* FirebaseApps.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		66367FFE18B2A02400B9D8FF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				661B366918AADBC900C51A4C /* IRPMasterViewController.h */,
+				661B366A18AADBC900C51A4C /* IRPMasterViewController.m */,
+				6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */,
+				6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */,
+				665BEFA718B05F80009CD139 /* IRPDataTableViewController.h */,
+				665BEFA818B05F80009CD139 /* IRPDataTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		66367FFF18B2A04F00B9D8FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6636800318B3175800B9D8FF /* IRPAppInfoCell.h */,
+				6636800418B3175800B9D8FF /* IRPAppInfoCell.m */,
+				6657E54D18B50AE800FB8197 /* IRPLeafNodeCell.h */,
+				6657E54E18B50AE800FB8197 /* IRPLeafNodeCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,11 +354,14 @@
 			files = (
 				664DF80018AC0FB500342421 /* FirebaseApp.m in Sources */,
 				661B366518AADBC900C51A4C /* IRPAppDelegate.m in Sources */,
-				661B366E18AADBC900C51A4C /* IRPDetailViewController.m in Sources */,
 				661B366118AADBC900C51A4C /* main.m in Sources */,
+				6657E54F18B50AE800FB8197 /* IRPLeafNodeCell.m in Sources */,
+				665BEFA918B05F80009CD139 /* IRPDataTableViewController.m in Sources */,
 				661B366B18AADBC900C51A4C /* IRPMasterViewController.m in Sources */,
+				6636800218B302C700B9D8FF /* FirebaseAppData.m in Sources */,
 				6626D98518AAEC63000FC73D /* FirebaseApps.xcdatamodeld in Sources */,
 				6626D98B18AB1FF4000FC73D /* IRPAddAppViewController.m in Sources */,
+				6636800518B3175800B9D8FF /* IRPAppInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

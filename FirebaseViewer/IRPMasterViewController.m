@@ -7,8 +7,8 @@
 //
 
 #import "IRPMasterViewController.h"
-#import "IRPDetailViewController.h"
 #import "IRPAddAppViewController.h"
+#import "IRPDataTableViewController.h"
 #import "FirebaseApp.h"
 
 
@@ -100,10 +100,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString: @"AppViewSegue"])
+    {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        FirebaseApp *object = self.appItems[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        FirebaseApp *appItem = self.appItems[indexPath.row];
+        
+        [[segue destinationViewController] setCurrentApp:appItem];
     }
 }
 

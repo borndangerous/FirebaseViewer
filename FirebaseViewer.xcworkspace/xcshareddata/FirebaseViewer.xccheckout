@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EB0EF9D5-BBA9-4EC0-862E-FF990E6D6190</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FirebaseViewer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>01F0CFC1-8C2E-4541-9B7F-BCC118FECF08</key>
+		<string>https://github.com/coyote240/FirebaseViewer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FirebaseViewer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>01F0CFC1-8C2E-4541-9B7F-BCC118FECF08</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/coyote240/FirebaseViewer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>01F0CFC1-8C2E-4541-9B7F-BCC118FECF08</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>01F0CFC1-8C2E-4541-9B7F-BCC118FECF08</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FirebaseViewer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
