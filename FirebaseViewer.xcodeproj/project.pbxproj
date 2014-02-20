@@ -21,6 +21,7 @@
 		661B367918AADBC900C51A4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661B365818AADBC800C51A4C /* UIKit.framework */; };
 		661B368118AADBC900C51A4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 661B367F18AADBC900C51A4C /* InfoPlist.strings */; };
 		661B368318AADBC900C51A4C /* FirebaseViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B368218AADBC900C51A4C /* FirebaseViewerTests.m */; };
+		661E629618B6A64A0029BCB2 /* IRPSnapshotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661E629518B6A64A0029BCB2 /* IRPSnapshotViewController.m */; };
 		6626D98118AADD6E000FC73D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6626D98018AADD6E000FC73D /* CoreData.framework */; };
 		6626D98518AAEC63000FC73D /* FirebaseApps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98318AAEC63000FC73D /* FirebaseApps.xcdatamodeld */; };
 		6626D98B18AB1FF4000FC73D /* IRPAddAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */; };
@@ -63,6 +64,8 @@
 		661B367E18AADBC900C51A4C /* FirebaseViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirebaseViewerTests-Info.plist"; sourceTree = "<group>"; };
 		661B368018AADBC900C51A4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		661B368218AADBC900C51A4C /* FirebaseViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseViewerTests.m; sourceTree = "<group>"; };
+		661E629418B6A64A0029BCB2 /* IRPSnapshotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPSnapshotViewController.h; sourceTree = "<group>"; };
+		661E629518B6A64A0029BCB2 /* IRPSnapshotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRPSnapshotViewController.m; sourceTree = "<group>"; };
 		6626D98018AADD6E000FC73D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6626D98418AAEC63000FC73D /* FirebaseApps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirebaseApps.xcdatamodel; sourceTree = "<group>"; };
 		6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRPAddAppViewController.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 			children = (
 				661B366918AADBC900C51A4C /* IRPMasterViewController.h */,
 				661B366A18AADBC900C51A4C /* IRPMasterViewController.m */,
+				661E629418B6A64A0029BCB2 /* IRPSnapshotViewController.h */,
+				661E629518B6A64A0029BCB2 /* IRPSnapshotViewController.m */,
 				6626D98918AB1FF4000FC73D /* IRPAddAppViewController.h */,
 				6626D98A18AB1FF4000FC73D /* IRPAddAppViewController.m */,
 				665BEFA718B05F80009CD139 /* IRPDataTableViewController.h */,
@@ -352,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661E629618B6A64A0029BCB2 /* IRPSnapshotViewController.m in Sources */,
 				664DF80018AC0FB500342421 /* FirebaseApp.m in Sources */,
 				661B366518AADBC900C51A4C /* IRPAppDelegate.m in Sources */,
 				661B366118AADBC900C51A4C /* main.m in Sources */,

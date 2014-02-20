@@ -28,6 +28,7 @@
 
 - (void) setInfo:(FDataSnapshot *)currentField
 {
+    self.snapshot = currentField;
     self.textLabel.text = currentField.name;
 }
 @end

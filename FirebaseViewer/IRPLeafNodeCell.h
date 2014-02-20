@@ -11,6 +11,8 @@
 
 @interface IRPLeafNodeCell : UITableViewCell
 
+@property (nonatomic) FDataSnapshot *snapshot;
+
 - (void) setInfo: (FDataSnapshot *) currentField;
 
 @end

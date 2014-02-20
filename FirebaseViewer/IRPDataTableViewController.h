@@ -11,6 +11,7 @@
 #import "FirebaseAppData.h"
 #import "IRPAppInfoCell.h"
 #import "IRPLeafNodeCell.h"
+#import "IRPSnapshotViewController.h"
 
 #define APP_INFO_CELL_HEIGHT 202
 

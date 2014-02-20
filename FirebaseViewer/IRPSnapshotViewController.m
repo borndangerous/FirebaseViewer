@@ -1,20 +1,18 @@
 //
-//  IRPDataTableViewController.m
+//  IRPSnapshotViewController.m
 //  FirebaseViewer
 //
-//  Created by Adam Shamblin on 2/15/14.
+//  Created by Adam Shamblin on 2/20/14.
 //  Copyright (c) 2014 Adam Shamblin. All rights reserved.
 //
 
-#import "IRPDataTableViewController.h"
+#import "IRPSnapshotViewController.h"
 
-@interface IRPDataTableViewController ()
-
-@property (nonatomic) NSArray *fields;
+@interface IRPSnapshotViewController ()
 
 @end
 
-@implementation IRPDataTableViewController
+@implementation IRPSnapshotViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,13 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.appData = [[FirebaseAppData alloc]
-                                initWithFirebaseApp: self.currentApp];
-    [self.appData connect];
-    [self.appData onDataUpdate:^(id snapshot) {
-        [self updateTableWithSnapshot: snapshot];
-    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,71 +45,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section == IRPAppInfoArea)
-    {
-        return 1;
-    }
-    if (section == IRPPathsArea)
-    {
-        if (self.fields != nil)
-            return [self.fields count];
-    }
-    return 0;
+    return [self.snapshot childrenCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == IRPAppInfoArea)
-    {
-        IRPAppInfoCell *cell = [tableView
-                                dequeueReusableCellWithIdentifier:@"AppInfoCell"
-                                forIndexPath:indexPath];
-        [cell setCurrentApp: self.appData];
-        
-        return cell;
-    }
-    else if (indexPath.section == IRPPathsArea)
-    {
-        IRPLeafNodeCell *cell = [tableView
-                                 dequeueReusableCellWithIdentifier:@"LeafNodes"
-                                 forIndexPath:indexPath];
-        [cell setInfo: [self.fields objectAtIndex:indexPath.row]];
-        
-        return cell;
-    }
-    else
-    {
-        UITableViewCell *cell = [tableView
-                                 dequeueReusableCellWithIdentifier:@"Nodes"
-                                 forIndexPath:indexPath];
-        return cell;
-    }
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == IRPAppInfoArea)
-    {
-        return APP_INFO_CELL_HEIGHT;
-    }
-    return [tableView rowHeight];
-}
-
-- (void) updateTableWithSnapshot: (FDataSnapshot *) snapshot
-{
-    NSEnumerator *children = snapshot.children;
-    self.fields = [children allObjects];
+    static NSString *CellIdentifier = @"SnapshotFieldCell";
+    IRPLeafNodeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [self.tableView beginUpdates];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:IRPPathsArea]
-                  withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView endUpdates];
+    FDataSnapshot *child = [[[self.snapshot children] allObjects] objectAtIndex: indexPath.row];
+    cell.textLabel.text = child.name;
+    
+    return cell;
 }
 
 /*
@@ -166,9 +110,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    IRPLeafNodeCell *cell = (IRPLeafNodeCell *) [self.tableView cellForRowAtIndexPath:indexPath];
+    FDataSnapshot *child = [[[self.snapshot children] allObjects] objectAtIndex: indexPath.row];
     
-    [[segue destinationViewController] setSnapshot:cell.snapshot];
+    [[segue destinationViewController] setSnapshot:child];
 }
 
 @end
